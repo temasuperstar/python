@@ -5,8 +5,8 @@
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
 def my_round(number, ndigits):
-    pass
-
+    x = round(number, ndigits)
+    return x
 
 print(my_round(2.1234567, 5))
 print(my_round(2.1999967, 5))
