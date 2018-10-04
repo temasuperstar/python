@@ -20,8 +20,12 @@ print(my_round(2.9999967, 5))
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 def lucky_ticket(ticket_number):
-    pass
-
+    s = str(ticket_number)
+    if len(s) > 5:
+        sum1 = int(s[0])+int(s[1])+int(s[2])
+        sum2 = int(s[3])+int(s[4])+int(s[5])
+        if sum1 == sum2:
+            return sum1
 
 print(lucky_ticket(123006))
 print(lucky_ticket(12321))
