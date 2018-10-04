@@ -71,3 +71,4 @@ for x in lst:
     if lst.count(x) == 1:
         lst3.append(x)
 print(lst3)
+#
