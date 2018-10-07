@@ -28,16 +28,28 @@
 import os
 
 def myfu(a, b, c):
+    '''
+    Подсчет ЗП
+    :param a: норма чаов
+    :param b: стоимость часа
+    :param c: отработанно
+    :return: возвращаем значение ЗП
+    '''
     if a == c:
         return a * b
     elif c > a:
         return (a * b) + ((c - a) * (b + b))
     elif a > c:
         return (a * b) - ((a - c) * (b + b))
-    #норма чаов a. час = b, отработанно с
+
 
 
 def myfun(txtdoc):
+    '''
+    Возвращает словарь в зависимости от файла длины строк файла
+    :param txtdoc: имя файла
+    :return: возвращает словарь фимилия = цыфры
+    '''
     path = os.path.join('data', txtdoc)
     with open(path, 'r', encoding='UTF-8') as f:
         b = []
@@ -68,12 +80,14 @@ def myfun(txtdoc):
 s1 = myfun('workers')
 s2 = myfun('hours_of')
 
+# Слияние словарей
+
 for key1, value1 in s1.items():
     for key2, value2 in s2.items():
         if key1 == key2:
             value1.append(value2)
 
-
+# Подсчет ЗП через фунцию
 for key, value in s1.items():
     print(key, myfu(value[0], value[1], value[2]))
 
